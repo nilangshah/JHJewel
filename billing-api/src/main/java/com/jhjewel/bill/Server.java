@@ -1,14 +1,8 @@
 package com.jhjewel.bill;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.jhjewel.bill.db.MysqlConnector;
-
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.ext.asyncsql.AsyncSQLClient;
-import io.vertx.ext.asyncsql.MySQLClient;
 import io.vertx.ext.auth.AuthProvider;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
@@ -20,8 +14,15 @@ import io.vertx.ext.web.handler.StaticHandler;
 import io.vertx.ext.web.handler.UserSessionHandler;
 import io.vertx.ext.web.sstore.LocalSessionStore;
 
-/*
- * @author <a href="mailto:pmlopes@gmail.com">Paulo Lopes</a>
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.jhjewel.bill.db.MysqlConnector;
+
+/**
+ * 
+ * @author nilshah
+ *
  */
 public class Server extends AbstractVerticle {
 

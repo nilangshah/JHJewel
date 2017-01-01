@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 public class Runner {
 
-	private static final String WEB_EXAMPLES_DIR = "bill-api-vertx";
+	private static final String WEB_EXAMPLES_DIR = "billing-api";
 	private static final String WEB_EXAMPLES_JAVA_DIR = WEB_EXAMPLES_DIR
 			+ "/src/main/java/";
 
