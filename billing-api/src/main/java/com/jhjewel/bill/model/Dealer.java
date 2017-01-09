@@ -1,18 +1,14 @@
 package com.jhjewel.bill.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import com.jhjewel.bill.model.BaseModel.AccountState;
 
 @Entity
 @Table(name = "Dealer")
@@ -30,7 +26,7 @@ public class Dealer extends BaseModel implements Serializable {
 	private String companyName;
 	private String address;
 	private String panNo;
-	private String mobilNo;
+	private String mobileNo;
 	private String vatTin;
 	@Column(nullable = false)
 	private String dealerType;
@@ -40,7 +36,7 @@ public class Dealer extends BaseModel implements Serializable {
 		dealerType="buyer";
 	}
 
-	public Dealer(int dealerId, String dealerName, String companyName, String address, String panNo, String mobilNo,
+	public Dealer(int dealerId, String dealerName, String companyName, String address, String panNo, String mobileNo,
 			String vatTin, String dealerType) {
 		super();
 		this.dealerId = dealerId;
@@ -48,7 +44,7 @@ public class Dealer extends BaseModel implements Serializable {
 		this.companyName = companyName;
 		this.address = address;
 		this.panNo = panNo;
-		this.mobilNo = mobilNo;
+		this.mobileNo = mobileNo;
 		this.vatTin = vatTin;
 		this.dealerType = dealerType;
 	}
@@ -61,7 +57,7 @@ public class Dealer extends BaseModel implements Serializable {
 	@Override
 	public String toString() {
 		return "Dealer [dealerId=" + dealerId + ", dealerName=" + dealerName + ", companyName=" + companyName
-				+ ", address=" + address + ", panNo=" + panNo + ", mobilNo=" + mobilNo + ", vatTin=" + vatTin
+				+ ", address=" + address + ", panNo=" + panNo + ", mobileNo=" + mobileNo + ", vatTin=" + vatTin
 				+ ", dealerType=" + dealerType + "]";
 	}
 
@@ -79,7 +75,7 @@ public class Dealer extends BaseModel implements Serializable {
 		result = prime * result + dealerId;
 		result = prime * result + ((dealerName == null) ? 0 : dealerName.hashCode());
 		result = prime * result + ((dealerType == null) ? 0 : dealerType.hashCode());
-		result = prime * result + ((mobilNo == null) ? 0 : mobilNo.hashCode());
+		result = prime * result + ((mobileNo == null) ? 0 : mobileNo.hashCode());
 		result = prime * result + ((panNo == null) ? 0 : panNo.hashCode());
 		result = prime * result + ((vatTin == null) ? 0 : vatTin.hashCode());
 		return result;
@@ -121,10 +117,10 @@ public class Dealer extends BaseModel implements Serializable {
 				return false;
 		} else if (!dealerType.equals(other.dealerType))
 			return false;
-		if (mobilNo == null) {
-			if (other.mobilNo != null)
+		if (mobileNo == null) {
+			if (other.mobileNo != null)
 				return false;
-		} else if (!mobilNo.equals(other.mobilNo))
+		} else if (!mobileNo.equals(other.mobileNo))
 			return false;
 		if (panNo == null) {
 			if (other.panNo != null)
@@ -215,18 +211,18 @@ public class Dealer extends BaseModel implements Serializable {
 	}
 
 	/**
-	 * @return the mobilNo
+	 * @return the mobileNo
 	 */
-	public String getMobilNo() {
-		return mobilNo;
+	public String getMobileNo() {
+		return mobileNo;
 	}
 
 	/**
-	 * @param mobilNo
-	 *            the mobilNo to set
+	 * @param mobileNo
+	 *            the mobileNo to set
 	 */
-	public void setMobilNo(String mobilNo) {
-		this.mobilNo = mobilNo;
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 
 	/**

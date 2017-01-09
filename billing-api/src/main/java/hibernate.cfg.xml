@@ -24,9 +24,10 @@
 
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
-		<property name="hibernate.hbm2ddl.auto">create</property>
+<!-- 		<property name="hibernate.hbm2ddl.auto">create</property> -->
 		<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
 		<!-- Mapping files -->
+		<mapping class ="com.jhjewel.bill.model.BaseModel"/>
 		<mapping class="com.jhjewel.bill.model.User"/>
 		<mapping class="com.jhjewel.bill.model.Dealer" />
 		 

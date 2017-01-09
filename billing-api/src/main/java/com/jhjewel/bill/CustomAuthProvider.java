@@ -41,7 +41,7 @@ public class CustomAuthProvider implements AuthProvider {
 		}
 		try {
 			//System.out.println(new UserDAO().getAllUsers());
-			com.jhjewel.bill.model.User u = new UserDAO().getUserById(username);
+			com.jhjewel.bill.model.User u = UserDAO.getInstance().getUserById(username);
 			//resultHandler.handle(Future.succeededFuture(new CustomUser(username, this)));
 			if (u == null) {
 				// Unknown user/password

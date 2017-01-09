@@ -9,7 +9,6 @@ import io.vertx.ext.auth.AuthProvider;
 
 public class CustomUser extends AbstractUser {
 
-	private AuthProvider authProvider;
 	private String username;
 	private JsonObject principal;
 
@@ -19,7 +18,6 @@ public class CustomUser extends AbstractUser {
 
 	public CustomUser(String username, AuthProvider authProvider) {
 		this.username = username;
-		this.authProvider = authProvider;
 	}
 
 	@Override
@@ -33,7 +31,6 @@ public class CustomUser extends AbstractUser {
 	@Override
 	public void setAuthProvider(AuthProvider authProvider) {
 		if (authProvider instanceof CustomAuthProvider) {
-			this.authProvider = (CustomAuthProvider) authProvider;
 		} else {
 			throw new IllegalArgumentException("Not a CustomAuthProvider");
 		}
@@ -43,7 +40,6 @@ public class CustomUser extends AbstractUser {
 	@Override
 	protected void doIsPermitted(String permission,
 			Handler<AsyncResult<Boolean>> resultHandler) {
-		// TODO Auto-generated method stub
 		resultHandler.handle(Future.succeededFuture(true));
 	}
 
