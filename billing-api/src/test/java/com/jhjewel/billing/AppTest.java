@@ -1,4 +1,4 @@
-package com.jhjewel.bill;
+package com.jhjewel.billing;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

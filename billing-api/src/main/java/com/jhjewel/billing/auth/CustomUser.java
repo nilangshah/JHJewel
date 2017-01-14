@@ -1,4 +1,4 @@
-package com.jhjewel.bill;
+package com.jhjewel.billing.auth;
 
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
@@ -16,7 +16,7 @@ public class CustomUser extends AbstractUser {
 
 	}
 
-	public CustomUser(String username, AuthProvider authProvider) {
+	public CustomUser(String username, AuthProvider authProvFider) {
 		this.username = username;
 	}
 
@@ -38,8 +38,7 @@ public class CustomUser extends AbstractUser {
 	}
 
 	@Override
-	protected void doIsPermitted(String permission,
-			Handler<AsyncResult<Boolean>> resultHandler) {
+	protected void doIsPermitted(String permission, Handler<AsyncResult<Boolean>> resultHandler) {
 		resultHandler.handle(Future.succeededFuture(true));
 	}
 
