@@ -1,28 +1,36 @@
-$(document).ready(function () {
-  var trigger = $('.hamburger'),
-      overlay = $('.overlay'),
-     isClosed = false;
+var app = angular.module('billApp', [ "ngRoute" ]);
 
-    trigger.click(function () {
-      hamburger_cross();      
-    });
+app.config([ '$routeProvider', function($routeProvider) {
+	$routeProvider.when('/home', {
+		templateUrl : 'templates/about.html',
+		controller : 'AboutController'
+	}).when('/addDealer', {
+		templateUrl : 'templates/add-dealer.html',
+		controller : 'AddDealerController'
+	}).otherwise({
+		redirectTo : '/home'
+	});
+} ]);
 
-    function hamburger_cross() {
+app.controller('AboutController', function($scope) {
+});
 
-      if (isClosed == true) {          
-        overlay.hide();
-        trigger.removeClass('is-open');
-        trigger.addClass('is-closed');
-        isClosed = false;
-      } else {   
-        overlay.show();
-        trigger.removeClass('is-closed');
-        trigger.addClass('is-open');
-        isClosed = true;
-      }
-  }
-  
-  $('[data-toggle="offcanvas"]').click(function () {
-        $('#wrapper').toggleClass('toggled');
-  });  
+app.controller('AddDealerController', function($scope, $window, $http) {
+	$scope.dealerTypeList = [ "buyer", "seller" ];
+	$scope.addDealer = function() {
+		var config = {
+			headers : {
+				'Content-Type' : 'application/json; charset=UTF-8'
+			}
+		}
+		var data = $scope.dealer
+		$http.post('/dealers', data, config).success(
+				function(response, status, headers, config) {
+					console.dir(response);
+					bootbox.alert("Delear Added Successfully");
+				}).error(function(response, status, header, config) {
+			console.dir(response);
+			bootbox.alert(response);
+		});
+	}
 });

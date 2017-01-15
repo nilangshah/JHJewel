@@ -18,12 +18,13 @@ public class Dealer extends BaseModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String dealerName;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String companyName;
 	private String address;
 	private String panNo;
+	private String email;
 	private String mobileNo;
 	private String vatTin;
 	@Column(nullable = false)
@@ -154,6 +155,14 @@ public class Dealer extends BaseModel {
 	 */
 	public void setDealerType(String dealerType) {
 		this.dealerType = dealerType;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

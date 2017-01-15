@@ -1,0 +1,122 @@
+<div ng-controller="AddDealerController"
+	style="color: orange; padding-top: 25px;">
+	<form class="form-horizontal" name="dealerForm" novalidate>
+
+		<!-- NAME -->
+		<div class="form-group"
+			ng-class="{ 'dealer-error' : dealerForm.name.$invalid && (dealerForm.name.$dirty || submitted)}">
+			<label class="col-sm-2 control-label">Name*</label>
+			<div class="col-sm-4">
+				<input type="text" name="name" class="form-control"
+					ng-model="dealer.dealerName" placeholder="Dealer Name"
+					ng-required="true">
+				<p
+					ng-show="dealerForm.name.$error.required && (dealerForm.name.$dirty || submitted)"
+					class="dealer-error">Dealer name is required.</p>
+			</div>
+		</div>
+
+		<!-- Company NAME -->
+		<div class="form-group"
+			ng-class="{ 'dealer-error' : dealerForm.companyName.$invalid && (dealerForm.companyName.$dirty || submitted)}">
+			<label class="col-sm-2 control-label">Company Name*</label>
+			<div class="col-sm-4">
+				<input type="text" name="companyName" class="form-control"
+					ng-model="dealer.companyName" placeholder="Company Name"
+					ng-required="true">
+				<p
+					ng-show="dealerForm.companyName.$error.required && (dealerForm.companyName.$dirty || submitted)"
+					class="dealer-error">Company name is required.</p>
+			</div>
+		</div>
+
+		<!-- Address -->
+		<div class="form-group"
+			ng-class="{ 'dealer-error' : dealerForm.address.$invalid && (dealerForm.address.$dirty || submitted)}">
+			<label class="col-sm-2 control-label">Address</label>
+			<div class="col-sm-4">
+				<input type="text" name="address" class="form-control"
+					ng-model="dealer.address" placeholder="Address" ng-required="true">
+				<p
+					ng-show="dealerForm.address.$error.required && (dealerForm.address.$dirty || submitted)"
+					class="dealer-error">Address is required.</p>
+			</div>
+		</div>
+
+		<!-- Pan No -->
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Pan Number</label>
+			<div class="col-sm-4">
+				<input type="text" name="panno" class="form-control"
+					ng-model="dealer.panNo" placeholder="Pan Number">
+			</div>
+		</div>
+
+		<!-- VAT TIN -->
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Vat Tin</label>
+			<div class="col-sm-4">
+				<input type="text" name="vattin" class="form-control"
+					ng-model="dealer.vatTin" placeholder="Vat Tin">
+			</div>
+		</div>
+
+		<!-- EMAIL -->
+		<div class="form-group"
+			ng-class="{ 'dealer-error' : dealerForm.email.$invalid && (dealerForm.email.$dirty || submitted)}">
+			<label class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-4">
+				<input type="email" name="email" class="form-control"
+					ng-model="dealer.email" placeholder="Email Address"
+					ng-required="true">
+				<p
+					ng-show="dealerForm.email.$error.required && (dealerForm.email.$dirty || submitted)"
+					class="dealer-error">Email is required.</p>
+				<p
+					ng-show="dealerForm.email.$error.email && (dealerForm.email.$dirty || submitted)"
+					class="dealer-error">Enter a valid email.</p>
+			</div>
+		</div>
+
+		<!-- CONTACTNO -->
+		<div class="form-group"
+			ng-class="{ 'dealer-error' : dealerForm.contactno.$invalid && (dealerForm.contactno.$dirty || submitted) }">
+			<label class="col-sm-2 control-label">Contact Number</label>
+			<div class="col-sm-4">
+				<input type="text" name="contactno" class="form-control"
+					ng-model="dealer.mobileNo" placeholder="Contact Number"
+					ng-pattern="/^[789]\d{9}$/" maxlength="10">
+				<p
+					ng-show="dealerForm.contactno.$error.pattern && (dealerForm.contactno.$dirty || submitted)"
+					class="dealer-error">Enter a valid contact number.</p>
+			</div>
+		</div>
+
+		<!-- DealerType -->
+		<div class="form-group"
+			ng-class="{ 'dealer-error' : dealerForm.dealerType.$invalid && (dealerForm.dealerType.$dirty || submitted)}">
+			<label class="col-sm-2 control-label">Dealer Type</label>
+			<div class="col-sm-4">
+				<select name="dealerType" class="form-control"
+					ng-model="dealer.dealerType"
+					ng-options="dealerType for dealerType in dealerTypeList"
+					ng-required="true">
+					<option value=''>Select</option>
+				</select>
+				<p
+					ng-show="dealerForm.dealerType.$error.required && (dealerForm.dealerType.$dirty || submitted)"
+					class="dealer-error">Select Dealer Type.</p>
+			</div>
+		</div>
+
+		<!-- ng-disabled FOR ENABLING AND DISABLING SUBMIT BUTTON -->
+		<!--<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Register</button>-->
+		<div style="padding-left: 170px;">
+			<button ng-click="addDealer()" ng-disabled="dealerForm.$invalid"
+				class="btn btn-primary">Add Dealer</button>
+			<span style="padding-left: 25px;">
+				<button type="reset" class="btn btn-danger">Reset</button>
+			</span>
+		</div>
+	</form>
+</div>
