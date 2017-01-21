@@ -46,6 +46,7 @@ public class CustomAuthProvider implements AuthProvider {
 				String hashedStoredPwd = u.getPassword();
 				String salt = u.getPasswordSalt();
 				String hashedPassword = AuthUtil.computeHash(password, salt);
+				LOGGER.warn(password + ":"+ hashedPassword + ":"+hashedStoredPwd);
 				if (hashedStoredPwd.equals(hashedPassword)) {
 					resultHandler.handle(Future.succeededFuture(new CustomUser(username, this)));
 				} else {

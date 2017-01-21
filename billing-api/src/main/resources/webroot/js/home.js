@@ -7,6 +7,9 @@ app.config([ '$routeProvider', function($routeProvider) {
 	}).when('/addDealer', {
 		templateUrl : 'templates/add-dealer.html',
 		controller : 'AddDealerController'
+	}).when('/viewDealers', {
+		templateUrl : 'templates/view-dealers.html',
+		controller : 'ViewDealersController'
 	}).otherwise({
 		redirectTo : '/home'
 	});
@@ -33,4 +36,13 @@ app.controller('AddDealerController', function($scope, $window, $http) {
 			bootbox.alert(response);
 		});
 	}
+});
+
+app.controller('ViewDealersController', function($scope, $http) {
+	//$scope.dealers = [ {"dealerName":"Alfreds Futterkiste","companyName":"Berlin","Country":"Germany"} ];
+	$http.get('/dealers')
+    .then(function (response) {
+    		console.log(response);
+    		$scope.dealers = response.data;
+    });
 });

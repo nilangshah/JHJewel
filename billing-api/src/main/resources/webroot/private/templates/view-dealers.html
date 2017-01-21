@@ -1,0 +1,22 @@
+<div ng-controller="ViewDealersController"
+	style="color: orange; padding-top: 25px;">
+	
+	
+	<table class="table table-responsive">
+		<thead>
+		<td>Name </td>
+		<td>Company </td>
+		<td>M. No </td>
+		<td>Type </td>
+		<td>Address </td>
+		</thead>
+		  <tr ng-repeat="dlr in dealers">
+		    <td>{{ dlr.dealerName }}</td>
+		    <td>{{ dlr.companyName }}</td>
+		    <td>{{ dlr.mobileNo }}</td>
+		    <td>{{ dlr.dealerType }}</td>
+		    <td>{{ dlr.address }}</td>    
+		  </tr>
+	</table>
+
+</div>
