@@ -8,63 +8,78 @@
 
 <link rel="stylesheet" type="text/css"
 	href="../css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+	href="../fa/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
 	href="../css/bootstrap/bootsnipp.min.css">
 <link rel="stylesheet" type="text/css" href="../css/home.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 
 
 </head>
-<body
-	style="margin-top: 0px; background-image: url('../images/bg3.jpg');"
-	ng-app="billApp">
+<body style="margin-top: 0px; background-color: black;" ng-app="billApp">
 
-	<div id="wrapper" class="toggled">
-
-
-		<!-- Sidebar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top"
-			id="sidebar-wrapper" role="navigation">
-			<ul class="nav sidebar-nav">
-				<li class="sidebar-brand"><a href="#"> JH Jewels </a></li>
-				<li><a href="#home">Home</a></li>
-				<!-- 				<li><a href="#">About</a></li> -->
-				<!-- 				<li><a href="#">Events</a></li> -->
-				<!-- 				<li><a href="#">Team</a></li> -->
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Dealer <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#addDealer">Add Dealer</a></li>
-						<li><a href="#viewDealers">View Dealers</a></li>
-						<!-- 						<li><a href="#">Something else here</a></li> -->
-						<!-- 						<li><a href="#">Separated link</a></li> -->
-						<!-- 						<li><a href="#">One more separated link</a></li> -->
-					</ul></li>
-				<!-- 				<li><a href="#">Services</a></li> -->
-				<li><a href="#">Contact</a></li>
-				<!-- 				<li><a href="https://twitter.com/maridlcrmn">Follow me</a></li> -->
-			</ul>
-		</nav>
-		<!-- /#sidebar-wrapper -->
-
-		<!-- Page Content -->
-		<div id="page-content-wrapper">
-			<!-- 			<button type="button" class="hamburger is-closed" -->
-			<!-- 				data-toggle="offcanvas"> -->
-			<!-- 				<span class="hamb-top"></span> <span class="hamb-middle"></span> <span -->
-			<!-- 					class="hamb-bottom"></span> -->
-			<!-- 			</button> -->
-			<div class="container"
-				style="float: right; width: 83%;">
-				<div ng-view></div>
+	<!-- 	<div id="wrapper" class="toggled row"> -->
+	<!-- Sidebar -->
+	<!-- 		<nav class="navbar navbar-inverse navbar-fixed-top" -->
+	<!-- 			id="sidebar-wrapper" role="navigation"> -->
+	<!-- 			<ul class="nav sidebar-nav"> -->
+	<!-- 				<li class="sidebar-brand"><a href="#"> JH Jewels </a></li> -->
+	<!-- 				<li><a href="#home">Home</a></li> -->
+	<!-- 								<li><a href="#">About</a></li> -->
+	<!-- 								<li><a href="#">Events</a></li> -->
+	<!-- 								<li><a href="#">Team</a></li> -->
+	<!-- 				<li class="dropdown"><a href="#" class="dropdown-toggle" -->
+	<!-- 					data-toggle="dropdown">Dealer <span class="caret"></span></a> -->
+	<!-- 					<ul class="dropdown-menu" role="menu"> -->
+	<!-- 						<li><a href="#addDealer">Add Dealer</a></li> -->
+	<!-- 						<li><a href="#viewDealers">View Dealers</a></li> -->
+	<!-- 												<li><a href="#">Something else here</a></li> -->
+	<!-- 												<li><a href="#">Separated link</a></li> -->
+	<!-- 												<li><a href="#">One more separated link</a></li> -->
+	<!-- 					</ul></li> -->
+	<!-- 								<li><a href="#">Services</a></li> -->
+	<!-- 				<li><a href="#">Contact</a></li> -->
+	<!-- 				<li><a ng-href="/{{'logout'}}">Logout</a></li> -->
+	<!-- 								<li><a href="https://twitter.com/maridlcrmn">Follow me</a></li> -->
+	<!-- 			</ul> -->
+	<!-- 		</nav> -->
+	<!-- /#sidebar-wrapper -->
+	<!-- Page Content -->
+	<div id="page-content-wrapper">
+		<div class="container">
+			<div>
+				<img style="width: 100%" src="../images/logo.jpg">
+			</div>
+			<div class="row">
+				<div class="col-xs-3" id="bggrad">
+					<nav role="navigation">
+						<ul class="sidebar-nav">
+							<span> <h3 style="color:orange;">JH Jewels </h3></span>
+							<li><a href="#home">Home</a></li>
+							<li class="dropdown"><a class="dropdown-toggle"
+								data-toggle="dropdown">Dealer <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#addDealer">Add Dealer</a></li>
+									<li><a href="#viewDealers">View Dealers</a></li>
+								</ul></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a ng-href="/{{'logout'}}">Logout</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-xs-9">
+					<div ng-view></div>
+				</div>
 			</div>
 		</div>
-
-		<!-- /#page-content-wrapper -->
-
 	</div>
+
+	<!-- /#page-content-wrapper -->
+
+	<!-- 	</div> -->
 
 	<!-- /#wrapper -->
 	<script src="../js/jquery/jquery-1.10.2.min.js"></script>

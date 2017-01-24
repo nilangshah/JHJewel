@@ -12,14 +12,39 @@
 </head>
 <body>
 	<div class="login" ng-app="login" ng-controller="loginControl">
-		<h1>Login</h1>
+		<h3 style="color: orange">Login</h3>
 		<form name="userForm" ng-submit="submitForm()">
-			<input type="text" name="u" placeholder="Username"
-				required="required" ng-model="username" /> <input
-				type="password" name="p" placeholder="Password" required="required"
-				ng-model="password" />
-			<button type="submit" class="btn btn-primary btn-block btn-large">Let
-				me in.</button>
+
+			<!-- User Name -->
+			<div class="form-group"
+				ng-class="{ 'login-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
+				<div>
+					<input type="text" name="name" class="form-control"
+						ng-model="username" placeholder="Username" ng-required="true">
+					<p
+						ng-show="userForm.name.$error.required && (userForm.name.$dirty || submitted)"
+						class="login-error">User name is required.</p>
+				</div>
+			</div>
+
+			<!-- Password -->
+			<div class="form-group"
+				ng-class="{ 'login-error' : userForm.password.$invalid && ()userForm.password.$dirty || submitted)}">
+				<div>
+					<input type="password" name="password" class="form-control"
+						ng-model="password" placeholder="Password" ng-required="true">
+					<p
+						ng-show="userForm.password.$error.required && (userForm.password.$dirty || submitted)"
+						class="login-error">Password is required.</p>
+				</div>
+			</div>
+			<div>
+				<p ng-show="loginFailed" class="login-error">Invalid username
+					or password.</p>
+				<button type="submit" ng-disabled="userForm.$invalid"
+					style="width: 300px; font-size: 20px" class="btn btn-primary">Let
+					me in.</button>
+			</div>
 		</form>
 		<br>
 	</div>

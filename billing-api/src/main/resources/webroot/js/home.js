@@ -10,6 +10,8 @@ app.config([ '$routeProvider', function($routeProvider) {
 	}).when('/viewDealers', {
 		templateUrl : 'templates/view-dealers.html',
 		controller : 'ViewDealersController'
+	}).when('/contact', {
+		templateUrl : 'templates/contact.html',
 	}).otherwise({
 		redirectTo : '/home'
 	});

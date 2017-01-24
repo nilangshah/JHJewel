@@ -3,6 +3,7 @@ app
 		.controller(
 				'loginControl',
 				function($scope, $http, $window) {
+					$scope.loginFailed = false;
 					$scope.submitForm = function() {
 						var data = $.param({
 							username : $scope.username,
@@ -21,12 +22,7 @@ app
 											$window.location.href = '/private/home.html';
 										}).error(
 										function(data, status, header, config) {
-											$scope.ResponseDetails = "Data: "
-													+ data + "<hr />status: "
-													+ status
-													+ "<hr />headers: "
-													+ header + "<hr />config: "
-													+ config;
+											$scope.loginFailed = true;
 										});
 					}
 

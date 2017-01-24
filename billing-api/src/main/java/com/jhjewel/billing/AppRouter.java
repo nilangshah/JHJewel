@@ -58,6 +58,7 @@ public class AppRouter extends AbstractVerticle {
 
 		// Any requests to URI starting '/private/' require login
 		router.route("/private/*").handler(RedirectAuthHandler.create(authProvider, "/login.html"));
+		router.route("/").handler(RedirectAuthHandler.create(authProvider, "/login.html"));
 
 		// Serve the static private pages from directory 'private'
 		// router.route("/private/*").handler(StaticHandler.create().setCachingEnabled(false).setWebRoot("private"));
@@ -73,7 +74,7 @@ public class AppRouter extends AbstractVerticle {
 		router.route("/logout").handler(context -> {
 			context.clearUser();
 			// Redirect back to the index page
-				context.response().putHeader("location", "/").setStatusCode(302).end();
+				context.response().putHeader("location", "/login.html").setStatusCode(302).end();
 			});
 
 		addUserApis(router);
